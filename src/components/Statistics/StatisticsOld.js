@@ -7,24 +7,20 @@ import {
   StatisticsSpan,
 } from './Statistics.styled';
 
-export const Statistics = ({ good, neutral, bad, total, positiv }) => {
+export const Statistics = ({ clicks, total, positiv }) => {
   return (
     <>
       <StatisticsDiv>
-        <StatisticsTitleH>
-          Статистика 
-        </StatisticsTitleH>
+        <StatisticsTitleH>Статистика</StatisticsTitleH>
         {total() ? (
           <BlockStatisticsDiv>
-            <StatisticsSpan>Good {good}</StatisticsSpan>
-            <StatisticsSpan>
-              Neutral {neutral}
-            </StatisticsSpan>
-            <StatisticsSpan>Bad {bad}</StatisticsSpan>
+            <StatisticsSpan>Good {clicks.good}</StatisticsSpan>
+            <StatisticsSpan>Neutral {clicks.neutral}</StatisticsSpan>
+            <StatisticsSpan>Bad {clicks.bad}</StatisticsSpan>
             <StatisticsSpan>Total {total()}</StatisticsSpan>
 
             {positiv() ? (
-              <StatisticsSpan>Positive feedback -  {positiv()}</StatisticsSpan>
+              <StatisticsSpan>Positive feedback - {positiv()}</StatisticsSpan>
             ) : (
               <MessageFeedback message="No positive feedback! 2" />
             )}
